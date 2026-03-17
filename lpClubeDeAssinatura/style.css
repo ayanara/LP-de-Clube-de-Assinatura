@@ -1,0 +1,75 @@
+ body {
+    margin: 0;
+    position: relative;
+    background: black;
+  }
+ 
+ .logo-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+  }
+
+  .logo-top-left img {
+    height: 40px; /* ajuste como quiser */
+    width: auto;
+    display: block;
+  }
+
+  .call-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .call-button a {
+    background-color: #7D298A;
+    color: #F8FBFB;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+  
+  }
+
+  .call-button a:hover {
+    background-color: #9547A5;
+  }
+
+  .hero {
+    height: 100vh; /* ocupa a tela inteira */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centraliza vertical */
+    align-items: center;     /* centraliza horizontal */
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #F8FBFB;
+  }
+
+  .hero p {
+    font-size: 1.4rem;
+    color: #F8FBFB;
+  }
+
+   .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-image: url('./imagens/background.png');
+    background-size: cover;  
+    background-position: center;
+  }
