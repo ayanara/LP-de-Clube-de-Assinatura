@@ -1,280 +1,147 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
 body {
-     margin: 0;
-     position: relative;
-     background: black;
-     font-family: Raleway;
- }
-
- .logo-top-left {
-     position: absolute;
-     top: 20px;
-     left: 20px;
-     z-index: 1000;
- }
-
- .logo-top-left img {
-     height: 40px;
-     /* ajuste como quiser */
-     width: auto;
-     display: block;
- }
-
- .call-button {
-     position: absolute;
-     top: 30px;
-     right: 20px;
-     z-index: 1000;
- }
-
- .call-button a {
-     background-color: #7D298A;
-     color: #F8FBFB;
-     padding: 10px 16px;
-     border-radius: 8px;
-     text-decoration: none;
-     font-weight: bold;
-     font-family: sans-serif;
-
- }
-
- .call-button a:hover {
-     background-color: #9547A5;
- }
-
-
- .book-highlight {
-     position: relative;
-     width: 100%;
-     min-height: 700px;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
- }
-
- .bottom-text p {
-     margin: 0;
-     font-family: Arial, sans-serif;
-     font-size: 2rem;
-     line-height: 1.8;
-     font-weight: 400;
-     color: #f4f1f8;
- }
-
- .bottom-text span {
-     color: #69d6ff;
-     font-weight: 700;
- }
-
- .secao-inicial {
-     position: relative;
-
- }
-
- .secao-inicial img {
-     width: 100%;
-     display: block;
- }
-
- .texto {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-
-     color: #f4f1f8;
-     font-size: 24px;
-     font-weight: bold;
-     text-align: center;
- }
-
- .secao-descricao p {
-
-     color: #f4f1f8;
-     font-size: 20px;
-     font-weight: lighter;
-     text-align: center;
- }
-
- .secao-descricao span {
-
-     color: #73B6D2;
-     font-size: 20px;
-     font-weight: lighter;
-     text-align: center;
- }
-
-.scene {
-  display: grid;
-  place-items: center;
+    margin: 0;
+    position: relative;
+    background: black;
+    font-family: Raleway;
 }
 
-.book-area {
-  position: relative;
-  width: 500px;
-  height: 500px;
+.logo-top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
 }
 
-.book {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 260px;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  cursor: pointer;
-  transition: transform 0.35s ease;
+.logo-top-left img {
+    height: 40px;
+    /* ajuste como quiser */
+    width: auto;
+    display: block;
+}
+
+.call-button {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.call-button a {
+    background-color: #7D298A;
+    color: #F8FBFB;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: sans-serif;
+
+}
+
+.call-button a:hover {
+    background-color: #9547A5;
 }
 
 
-/* estado inicial das palavras */
-.callout {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none;
+.book-highlight {
+    position: relative;
+    width: 100%;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.label {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: rgba(117, 225, 255, 0.12);
-  border: 1px solid rgba(117, 225, 255, 0.35);
-  color: #8fe8ff;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 0 20px rgba(117, 225, 255, 0.12);
+.bottom-text p {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    line-height: 1.8;
+    font-weight: 400;
+    color: #f4f1f8;
 }
 
-/* "braço" / seta */
-.arm {
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #7be7ff, #b05cff);
-  box-shadow: 0 0 12px rgba(176, 92, 255, 0.35);}
-
-/* ponta da seta */
-.arm::after {
-  content: "";
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%) rotate(45deg);
-  width: 10px;
-  height: 10px;
-  border-top: 3px solid #b05cff;
-  border-right: 3px solid #b05cff;
+.bottom-text span {
+    color: #69d6ff;
+    font-weight: 700;
 }
 
-/* HOVER: tudo aparece */
-.book-area:hover .callout {
-  opacity: 1;
+.secao-inicial {
+    position: relative;
+
 }
 
-/* =========================
-   POSIÇÕES
-   ========================= */
-
-/* superior esquerda */
-.c1 {
-  top: 95px;
-  left: 40px;
-  transform: translate(-20px, 10px);
-}
-.book-area:hover .c1 {
-  transform: translate(0, 0);
-}
-.c1 .arm {
-  width: 120px;
-  transform: rotate(25deg);
-  left: 105px;
-  top: 30px;
+.secao-inicial img {
+    width: 100%;
+    display: block;
+    margin-bottom: 50px;
 }
 
-/* superior */
-.c2 {
-  top: 20px;
-  left: 190px;
-  transform: translateY(20px);
-}
-.book-area:hover .c2 {
-  transform: translateY(0);
-}
-.c2 .arm {
-  width: 95px;
-  transform: rotate(80deg);
-  left: 55px;
-  top: 45px;
+.texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #f4f1f8;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
 }
 
-/* superior direita */
-.c3 {
-  top: 90px;
-  right: 40px;
-  transform: translate(20px, 10px);
-}
-.book-area:hover .c3 {
-  transform: translate(0, 0);
-}
-.c3 .arm {
-  width: 120px;
-  transform: rotate(155deg);
-  left: -20px;
-  top: 30px;
+.secao-descricao p {
+
+    color: #f4f1f8;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
 }
 
-/* esquerda */
-.c4 {
-  top: 220px;
-  left: 0;
-  transform: translateX(-20px);
-}
-.book-area:hover .c4 {
-  transform: translateX(0);
-}
-.c4 .arm {
-  width: 100px;
-  transform: rotate(0deg);
-  left: 100px;
-  top: 22px;
+.secao-descricao span {
+
+    color: #73B6D2;
+    font-size: 30px;
+    text-align: center;
 }
 
-/* direita */
-.c5 {
-  top: 220px;
-  right: 0;
-  transform: translateX(20px);
-}
-.book-area:hover .c5 {
-  transform: translateX(0);
-}
-.c5 .arm {
-  width: 100px;
-  transform: rotate(180deg);
-  left: -35px;
-  top: 22px;
+.livro-icone {
+    display: block;
+    margin: auto;
+    width: 80px;
 }
 
-/* inferior */
-.c6 {
-  bottom: 35px;
-  left: 180px;
-  transform: translateY(20px);
+.ball-icone {
+    display: block;
+    margin-left: auto;
+    margin-right: 30px;
+    width: 80px;
 }
-.book-area:hover .c6 {
-  transform: translateY(0);
+
+.ouija-icone {
+    display: block;
+    margin-left: 50px;
+    width: 80px;
 }
-.c6 .arm {
-  width: 100px;
-  transform: rotate(-85deg);
-  left: 60px;
-  top: -10px;
+
+.secao-kit-mes h1 {
+    color: #f4f1f8;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
 }
+
+.secao-kit-mes p {
+    color: #f4f1f8;
+    font-size: 18px;
+    text-align: center;
+
+}
+
+
+
