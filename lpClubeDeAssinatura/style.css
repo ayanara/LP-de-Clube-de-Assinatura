@@ -21,7 +21,6 @@ body {
 
 .logo-top-left img {
     height: 40px;
-    /* ajuste como quiser */
     width: auto;
     display: block;
 }
@@ -41,7 +40,6 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-family: sans-serif;
-
 }
 
 .call-button a:hover {
@@ -74,7 +72,6 @@ body {
 
 .secao-inicial {
     position: relative;
-
 }
 
 .secao-inicial img {
@@ -88,15 +85,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     color: #f4f1f8;
+    text-align: center;
     font-size: 24px;
     font-weight: bold;
-    text-align: center;
 }
 
 .secao-descricao p {
-
     color: #f4f1f8;
     font-size: 30px;
     text-align: center;
@@ -104,16 +99,22 @@ body {
 }
 
 .secao-descricao span {
-
     color: #73B6D2;
     font-size: 30px;
     text-align: center;
+}
+
+.secao-descricao {
+    
 }
 
 .livro-icone {
     display: block;
     margin: auto;
     width: 80px;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .ball-icone {
@@ -121,12 +122,72 @@ body {
     margin-left: auto;
     margin-right: 30px;
     width: 80px;
+    opacity: 0;
+    transform: translateX(20px) rotate(15deg) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .ouija-icone {
     display: block;
-    margin-left: 50px;
+    margin-left: 100px;
+    margin-top: -30px;
     width: 80px;
+    opacity: 0;
+    transform: translateX(-20px) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.secao-descricao:hover .livro-icone,
+.secao-descricao:hover .ball-icone,
+.secao-descricao:hover .ouija-icone {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
+
+.secao-descricao:hover .livro-icone:hover {
+    transform: translate(0, 0) scale(1.08) rotate(-4deg);
+}
+
+.secao-descricao:hover .ball-icone:hover {
+    transform: translate(0, 0) scale(1.08) rotate(6deg);
+}
+
+.secao-descricao:hover .ouija-icone:hover {
+    transform: translate(0, 0) scale(1.08) rotate(-6deg);
+}
+
+.kit-mes-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    cursor: pointer;
+}
+
+.secao-kit-mes {
+    margin-top: 80px;
+}
+
+.kit-mes-texto {
+    text-align: center;
+}
+
+.kit-mes-estrela {
+    width: 24px;
+    height: 24px;
+    display: block;
+    opacity: 0;
+    transform: translateX(20px) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.kit-mes-cabecalho .kit-mes-estrela:first-child {
+    transform: translateX(-20px) scale(0.8);
+}
+
+.secao-kit-mes:hover .kit-mes-estrela {
+    opacity: 1;
+    transform: translateX(0) scale(1);
 }
 
 .secao-kit-mes h1 {
@@ -140,8 +201,160 @@ body {
     color: #f4f1f8;
     font-size: 18px;
     text-align: center;
-
 }
 
+.kit-mes-palco {
+    position: relative;
+    width: min(100%, 980px);
+    height: 820px;
+    margin: 88px auto 0;
+    overflow: visible;
+}
 
+.kit-livro-principal {
+    position: absolute;
+    left: 50%;
+    bottom: 88px;
+    width: min(100%, 430px);
+    transform: translateX(-50%);
+    z-index: 4;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
+    transition: transform 0.55s ease, filter 0.55s ease;
+}
 
+.kit-item {
+    position: absolute;
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.45s ease;
+}
+
+.kit-pin {
+    right: 65%;
+    bottom: 25px;
+    width: 190px;
+    z-index: 3;
+    transform: translateX(150px) scale(0.8) rotate(-3deg);
+}
+
+.kit-bookmark-yellow {
+    left: 52.5%;
+    bottom: 210px;
+    width: 210px;
+    z-index: 2;
+    transform: translateX(-115px) rotate(-6deg);
+    transform-origin: bottom center;
+}
+
+.kit-bookmark-purple {
+    left: 62%;
+    bottom: 118px;
+    width: 214px;
+    z-index: 2;
+    transform: translateX(-165px) rotate(8deg);
+    transform-origin: bottom center;
+}
+
+.kit-mes-legenda {
+    position: absolute;
+    color: #f4f1f8;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.3;
+    opacity: 0;
+    letter-spacing: -0.01em;
+    transition: transform 0.6s ease, opacity 0.45s ease;
+}
+
+.legenda-livro {
+    top: 100px;
+    left: 24px;
+    transform: translateX(70px);
+}
+
+.legenda-pin {
+    left: 114px;
+    bottom: 430px;
+    transform: translateX(70px);
+}
+
+.legenda-marcador {
+    right: 46px;
+    bottom: -8px;
+    transform: translateX(-70px);
+}
+
+.kit-seta {
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+    transition: transform 0.6s ease, opacity 0.45s ease;
+}
+
+.seta-livro {
+    top: 130px;
+    left: 118px;
+    width: 210px;
+    transform: translateX(55px);
+}
+
+.seta-pin {
+    left: 98px;
+    bottom: 245px;
+    width: 150px;
+    transform: translateX(55px);
+}
+
+.seta-marcador {
+    right: 50px;
+    bottom: 15px;
+    width: 176px;
+    transform: translateX(-55px);
+}
+
+.kit-mes-palco:hover .kit-livro-principal {
+    transform: translateX(-50%) scale(1.015);
+    filter: drop-shadow(0 26px 48px rgba(0, 0, 0, 0.42));
+}
+
+.kit-mes-palco:hover .kit-pin {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(-3deg);
+    transition-delay: 0.08s;
+}
+
+.kit-mes-palco:hover .kit-bookmark-yellow {
+    opacity: 1;
+    transform: translateX(34px) rotate(12deg);
+    transition-delay: 0.12s;
+}
+
+.kit-mes-palco:hover .kit-bookmark-purple {
+    opacity: 1;
+    transform: translateX(48px) rotate(19deg);
+    transition-delay: 0.18s;
+}
+
+.kit-mes-palco:hover .kit-mes-legenda {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.kit-mes-palco:hover .kit-seta {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.kit-mes-palco:hover .legenda-livro,
+.kit-mes-palco:hover .seta-livro {
+    transition-delay: 0.1s;
+}
+
+.kit-mes-palco:hover .legenda-pin,
+.kit-mes-palco:hover .seta-pin {
+    transition-delay: 0.18s;
+}
+
+.kit-mes-palco:hover .legenda-marcador,
+.kit-mes-palco:hover .seta-marcador {
+    transition-delay: 0.24s;
+}
