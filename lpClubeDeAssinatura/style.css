@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     margin: 0;
     position: relative;
@@ -24,6 +23,37 @@ body {
     width: auto;
     display: block;
 }
+
+.texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f4f1f8;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.texto h1 {
+    margin-bottom: 32px;
+}
+
+.texto p {
+    font-weight: 200;
+    font-size: 20px;
+    
+}
+
+.navagacao-superior {
+    position: relative;
+}
+
+.navagacao-superior > img {
+    width: 100%;
+    display: block;
+}
+
 
 .call-button {
     position: absolute;
@@ -80,16 +110,6 @@ body {
     margin-bottom: 50px;
 }
 
-.texto {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #f4f1f8;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-}
 
 .secao-descricao p {
     color: #f4f1f8;
@@ -105,8 +125,9 @@ body {
 }
 
 .secao-descricao {
-    
+    margin-top: 80px;
 }
+
 
 .livro-icone {
     display: block;
