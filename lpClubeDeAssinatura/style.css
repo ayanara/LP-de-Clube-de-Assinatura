@@ -26,7 +26,7 @@ body {
 
 .texto {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #f4f1f8;
@@ -197,19 +197,9 @@ body {
     width: 24px;
     height: 24px;
     display: block;
-    opacity: 0;
-    transform: translateX(20px) scale(0.8);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+   
 }
 
-.kit-mes-cabecalho .kit-mes-estrela:first-child {
-    transform: translateX(-20px) scale(0.8);
-}
-
-.secao-kit-mes:hover .kit-mes-estrela {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-}
 
 .secao-kit-mes h1 {
     color: #f4f1f8;
@@ -228,7 +218,7 @@ body {
     position: relative;
     width: min(100%, 980px);
     height: 820px;
-    margin: 88px auto 0;
+    margin: 40px auto 0;
     overflow: visible;
 }
 
@@ -378,4 +368,183 @@ body {
 .kit-mes-palco:hover .legenda-marcador,
 .kit-mes-palco:hover .seta-marcador {
     transition-delay: 0.24s;
+}
+
+.secao-assinatura {
+    position: relative;
+    padding: 120px 40px 140px;
+    background: url("./imagens/pricing-background.png") center/cover no-repeat;
+    overflow: hidden;
+}
+
+.assinatura-titulo {
+    text-align: center;
+    margin-bottom: 72px;
+}
+
+.assinatura-titulo p {
+    color: #e29be8;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.assinatura-titulo h1 {
+    color: #f4f1f8;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.assinatura-estrelas {
+    position: absolute;
+    display: flex;
+    gap: 12px;
+}
+
+.assinatura-estrelas img {
+    width: 18px;
+    opacity: 0.85;
+}
+
+.estrelas-esquerda {
+    left: 48px;
+    top: 300px;
+}
+
+.estrelas-direita {
+    right: 48px;
+    bottom: 150px;
+}
+
+.assinatura-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.plano-card {
+    width: 300px;
+    height: 350px;
+    padding: 32px 32px 10px;
+    border-radius: 28px;
+    background: rgba(8, 26, 48, 0.96);
+    border: 1px solid rgba(65, 125, 201, 0.18);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    color: #f8fbfb;
+    display: flex;
+    flex-direction: column;
+}
+
+.plano-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #8ecdf6;
+}
+
+.plano-card .preco {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+.plano-card .preco span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.plano-card .preco-anual {
+    color: rgba(248, 251, 251, 0.68);
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.plano-card ul {
+    list-style: none;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.plano-card li {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 3px;
+    color: rgba(248, 251, 251, 0.88);
+    font-size: 10px;
+   
+}
+
+.plano-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #59b7f0;
+}
+
+.plano-card a {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: #235b88;
+    color: #f8fbfb;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0;
+}
+
+.plano-card-mensal {
+    transform: rotate(-8deg);
+}
+
+.plano-card-semestral {
+    position: relative;
+    transform: translateY(-22px);
+    z-index: 2;
+}
+
+.plano-card-anual {
+    transform: rotate(8deg);
+}
+
+.destaque {
+    background: rgba(10, 36, 67, 0.98);
+}
+
+.plano-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.plano-topo h2 {
+    margin-bottom: 0;
+    color: #e29be8;
+}
+
+.selo-popular {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #123c67;
+    color: #d7ebff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.plano-card-semestral li::before {
+    background: #d45de0;
+}
+
+.plano-card-semestral a {
+    background: #8c30a3;
 }
