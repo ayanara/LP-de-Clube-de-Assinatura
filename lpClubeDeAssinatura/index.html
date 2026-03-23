@@ -15,10 +15,10 @@
 
 <body>
     <section class="navagacao-superior">
-        <div class="logo-top-left"><img class="logo-top-left" src="./imagens/logo-horizontal.png" alt="Logo"></div>
+        <div class="logo-top-left"><img src="./imagens/logo-horizontal.png" alt="Logo"></div>
 
         <div class="call-button"><a href="#secao-assinatura">Assinar</a></div>
-        <img src="./imagens/background.png" alt="Imagem de fundo">
+        <img src="./imagens/background.png" alt="">
 
 
         <div class="texto">
@@ -32,7 +32,7 @@
     <section class="secao-descricao">
         <img class="livro-icone" src="./imagens/mystery-opened-spellbook.png" alt="livro">
         <p>Receba todo mês um livro <span> surpresa</span> do seu tema favorito, acompanhado de<br>
-            <span>brindes</span>exclusivos que tornarão a sua experiência literária <span>encantadora</span>
+            <span>brindes</span> exclusivos que tornarão a sua experiência literária <span>encantadora</span>
         </p>
         <img class="ball-icone" src="./imagens/mystery-crystal-ball.png" alt="bola de cristal">
 
@@ -41,12 +41,12 @@
 
     <section class="secao-kit-mes">
         <div class="kit-mes-cabecalho">
-            <img class="kit-mes-estrela" src="./imagens/star.svg" alt="star">
+            <img class="kit-mes-estrela" src="./imagens/star.svg" alt="" aria-hidden="true">
             <div class="kit-mes-texto">
-                <h1>Conheça o Kit do mensal</h1>
+                <h2>Conheça o Kit do mensal</h2>
                 <p>Receba uma caixa surpresa todos os meses</p>
             </div>
-            <img class="kit-mes-estrela" src="./imagens/star.svg" alt="star">
+            <img class="kit-mes-estrela" src="./imagens/star.svg" alt="" aria-hidden="true">
         </div>
 
         <div class="kit-mes-palco">
@@ -59,26 +59,26 @@
             <img class="kit-item kit-bookmark-purple" src="./imagens/bookmark-purple.png" alt="Marca páginas roxo">
             <img class="kit-livro-principal" src="./imagens/book.png" alt="Livro do kit mensal">
 
-            <img class="kit-seta seta-livro" src="./imagens/arrow.png" alt="Seta para livro capa dura">
-            <img class="kit-seta seta-pin" src="./imagens/arrow (1).png" alt="Seta para broche exclusivo">
-            <img class="kit-seta seta-marcador" src="./imagens/arrow (2).png" alt="Seta para marca página exclusivo">
+            <img class="kit-seta seta-livro" src="./imagens/arrow.png" alt="" aria-hidden="true">
+            <img class="kit-seta seta-pin" src="./imagens/arrow (1).png" alt="" aria-hidden="true">
+            <img class="kit-seta seta-marcador" src="./imagens/arrow (2).png" alt="" aria-hidden="true">
         </div>
 
     </section>
 
     <section class="secao-assinatura" id="secao-assinatura">
         <div class="assinatura-titulo">
-            <h1>Assinatura</h1>
-            <h1>Encantos Literários</h1>
+            <p>Assinatura</p>
+            <h2>Encantos Literários</h2>
         </div>
 
-        <img class="estrela-assinatura estrela-1" src="./imagens/star.svg" alt="estrela decorativa">
-        <img class="estrela-assinatura estrela-2" src="./imagens/star.svg" alt="estrela decorativa">
-        <img class="estrela-assinatura estrela-3" src="./imagens/star.svg" alt="estrela decorativa">
-        <img class="estrela-assinatura estrela-4" src="./imagens/star.svg" alt="estrela decorativa">
+        <img class="estrela-assinatura estrela-1" src="./imagens/star.svg" alt="" aria-hidden="true">
+        <img class="estrela-assinatura estrela-2" src="./imagens/star.svg" alt="" aria-hidden="true">
+        <img class="estrela-assinatura estrela-3" src="./imagens/star.svg" alt="" aria-hidden="true">
+        <img class="estrela-assinatura estrela-4" src="./imagens/star.svg" alt="" aria-hidden="true">
 
         <div class="assinatura-cards">
-            <article class="plano-card plano-card-mensal">
+            <article class="plano-card plano-card-mensal" tabindex="0" role="button" aria-pressed="false" aria-label="Selecionar plano mensal">
                 <h2>Mensal</h2>
                 <p class="preco">R$ 59,90<span>/mês</span></p>
                 <p class="preco-anual">R$ 718,80 por ano</p>
@@ -89,12 +89,12 @@
                     <li>Acesso à comunidade literária</li>
                     
                 </ul>
-                <a href="#">Assinar mensal</a>
+                <button class="plano-cta" type="button">Assinar mensal</button>
                 </div>
             </article>
 
-            <article class="plano-card plano-card-semestral destaque ativo">
-                <img class="coelho-semestral" src="./imagens/Bunny.png" alt="icone coelho">
+            <article class="plano-card plano-card-semestral destaque ativo" tabindex="0" role="button" aria-pressed="true" aria-label="Selecionar plano semestral">
+                <img class="coelho-semestral" src="./imagens/Bunny.png" alt="" aria-hidden="true">
                 <div class="plano-topo">
                     <h2>Semestral</h2>
                     <span class="selo-popular">Popular</span>
@@ -108,11 +108,11 @@
                     <li>Acesso à comunidade literária</li>
                     <li>Membro premium do clube</li>
                 </ul>
-                <a href="#">Assinar semestral</a>
+                <button class="plano-cta" type="button">Assinar semestral</button>
                 </div>
             </article>
 
-            <article class="plano-card plano-card-anual">
+            <article class="plano-card plano-card-anual" tabindex="0" role="button" aria-pressed="false" aria-label="Selecionar plano anual">
                 <h2>Anual</h2>
                 <p class="preco">R$ 48,90<span>/mês</span></p>
                 <p class="preco-anual">R$ 586,80 por ano</p>
@@ -124,14 +124,14 @@
                     <li>Membro premium do clube</li>
                     <li>Planner anual de leituras</li>
                 </ul>
-                <a href="#">Assinar anual</a>
+                <button class="plano-cta" type="button">Assinar anual</button>
                 </div>
             </article>
         </div>
     </section>
 
     <footer class="rodape">
-        <img class="rodape-bg" src="./imagens/book-trace-background.png" alt="">
+        <img class="rodape-bg" src="./imagens/book-trace-background.png" alt="" aria-hidden="true">
 
         <div class="rodape-conteudo">
             <div class="rodape-marca">

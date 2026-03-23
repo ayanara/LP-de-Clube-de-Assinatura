@@ -1,7 +1,12 @@
+/* Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -9,8 +14,15 @@ body {
     position: relative;
     background: #00050A;
     font-family: Raleway;
+    overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero */
 .logo-top-left {
     position: absolute;
     top: 20px;
@@ -31,18 +43,21 @@ body {
     transform: translate(-50%, -50%);
     color: #f4f1f8;
     text-align: center;
-    font-size: 24px;
+    font-size: clamp(1.25rem, 1rem + 1vw, 2rem);
     font-weight: bold;
+    width: min(88vw, 860px);
 }
 
 .texto h1 {
     margin-bottom: 32px;
+    font-size: clamp(2rem, 1.35rem + 3.4vw, 4.75rem);
+    line-height: 1.1;
 }
 
 .texto p {
     font-weight: 200;
-    font-size: 20px;
-    
+    font-size: clamp(1rem, 0.9rem + 0.9vw, 1.5rem);
+    line-height: 1.5;
 }
 
 .navagacao-superior {
@@ -52,6 +67,8 @@ body {
 .navagacao-superior > img {
     width: 100%;
     display: block;
+    min-height: 560px;
+    object-fit: cover;
 }
 
 
@@ -70,64 +87,41 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-family: sans-serif;
+    display: inline-block;
 }
 
 .call-button a:hover {
     background-color: #9547A5;
 }
 
-
-.book-highlight {
-    position: relative;
-    width: 100%;
-    min-height: 700px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.call-button a:focus-visible,
+.plano-card:focus-visible,
+.plano-cta:focus-visible,
+.rodape-redes a:focus-visible,
+.rodape-coluna a:focus-visible {
+    outline: 3px solid #73B6D2;
+    outline-offset: 4px;
 }
 
-.bottom-text p {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    font-size: 2rem;
-    line-height: 1.8;
-    font-weight: 400;
-    color: #f4f1f8;
-}
-
-.bottom-text span {
-    color: #69d6ff;
-    font-weight: 700;
-}
-
-.secao-inicial {
-    position: relative;
-}
-
-.secao-inicial img {
-    width: 100%;
-    display: block;
-    margin-bottom: 50px;
-}
-
-
+/* Descrição */
 .secao-descricao p {
     color: #f4f1f8;
-    font-size: 30px;
+    font-size: clamp(1.35rem, 1rem + 1.8vw, 1.9rem);
     text-align: center;
     margin-top: 30px;
+    line-height: 1.55;
+    padding: 0 20px;
 }
 
 .secao-descricao span {
     color: #73B6D2;
-    font-size: 30px;
+    font-size: inherit;
     text-align: center;
 }
 
 .secao-descricao {
     margin-top: 80px;
 }
-
 
 .livro-icone {
     display: block;
@@ -177,6 +171,7 @@ body {
     transform: translate(0, 0) scale(1.08) rotate(-6deg);
 }
 
+/* Kit mensal */
 .kit-mes-cabecalho {
     display: flex;
     align-items: center;
@@ -197,20 +192,19 @@ body {
     width: 24px;
     height: 24px;
     display: block;
-   
 }
 
-
-.secao-kit-mes h1 {
+.secao-kit-mes h2 {
     color: #f4f1f8;
-    font-size: 30px;
+    font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.5rem);
     text-align: center;
     margin-top: 30px;
+    line-height: 1.15;
 }
 
 .secao-kit-mes p {
     color: #f4f1f8;
-    font-size: 18px;
+    font-size: clamp(1rem, 0.85rem + 0.7vw, 1.2rem);
     text-align: center;
 }
 
@@ -370,6 +364,7 @@ body {
     transition-delay: 0.24s;
 }
 
+/* Assinatura */
 .secao-assinatura {
     position: relative;
     padding: 120px 40px 140px;
@@ -388,9 +383,9 @@ body {
     margin-bottom: 12px;
 }
 
-.assinatura-titulo h1 {
+.assinatura-titulo h2 {
     color: #f4f1f8;
-    font-size: 30px;
+    font-size: clamp(1.9rem, 1.2rem + 2vw, 3rem);
     text-align: center;
     
 }
@@ -511,16 +506,19 @@ body {
     background: #59b7f0;
 }
 
-.plano-card a {
+.plano-cta {
     display: block;
     width: 100%;
     padding: 10px 20px;
     border-radius: 8px;
     background: #235b88;
     color: #f8fbfb;
-    text-decoration: none;
     font-weight: 700;
     text-align: center;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .plano-card-mensal {
@@ -553,8 +551,8 @@ body {
     line-height: 1.35;
 }
 
-.plano-card-mensal a,
-.plano-card-anual a {
+.plano-card-mensal .plano-cta,
+.plano-card-anual .plano-cta {
     font-size: 11px;
 }
 
@@ -625,17 +623,13 @@ body {
     background: rgba(10, 36, 67, 0.98);
 }
 
-.destaque {
-    
-}
-
 .plano-card.ativo {
     background: rgba(10, 36, 67, 0.98);
     box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
     border-color: rgba(65, 125, 201, 0.55);
 }
 
-.plano-card.ativo a {
+.plano-card.ativo .plano-cta {
     background: #8c30a3;
 }
 
@@ -670,6 +664,7 @@ body {
     color: #d7ebff;
 }
 
+/* Footer */
 .rodape {
     position: relative;
     margin-top: 120px;
@@ -695,6 +690,7 @@ body {
     object-fit: cover;
     object-position: center top;
     z-index: 0;
+    pointer-events: none;
 }
 
 .rodape-marca {
@@ -748,6 +744,345 @@ body {
     color: #6fb7e0;
     text-decoration: none;
     font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .texto {
+        top: 46%;
+        width: min(88vw, 720px);
+    }
+
+    .kit-mes-palco {
+        width: min(100%, 760px);
+        height: 700px;
+    }
+
+    .kit-livro-principal {
+        width: min(100%, 360px);
+    }
+
+    .kit-bookmark-yellow {
+        width: 180px;
+        bottom: 180px;
+    }
+
+    .kit-bookmark-purple {
+        width: 184px;
+        bottom: 110px;
+    }
+
+    .kit-pin {
+        width: 150px;
+    }
+
+    .assinatura-cards {
+        max-width: 920px;
+    }
+
+    .plano-card {
+        width: 260px;
+        height: 340px;
+        padding: 28px 24px 10px;
+    }
+
+    .plano-card-mensal {
+        transform: translateX(170px) rotate(-8deg) scale(0.96);
+    }
+
+    .plano-card-anual {
+        transform: translateX(-170px) rotate(8deg) scale(0.96);
+    }
+
+    .assinatura-cards:hover .plano-card-mensal,
+    .assinatura-cards.cards-abertos .plano-card-mensal {
+        transform: translateX(8px) rotate(-8deg);
+    }
+
+    .assinatura-cards:hover .plano-card-anual,
+    .assinatura-cards.cards-abertos .plano-card-anual {
+        transform: translateX(-8px) rotate(8deg);
+    }
+
+    .rodape-conteudo {
+        padding: 88px 48px 72px;
+        gap: 32px;
+    }
+
+    .rodape-links {
+        gap: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-top-left {
+        top: 16px;
+        left: 16px;
+    }
+
+    .call-button {
+        top: 16px;
+        right: 16px;
+    }
+
+    .call-button a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .navagacao-superior > img {
+        min-height: 560px;
+        object-fit: cover;
+    }
+
+    .texto {
+        top: 50%;
+        width: min(90vw, 520px);
+        font-size: 18px;
+    }
+
+    .texto h1 {
+        margin-bottom: 18px;
+    }
+
+    .texto p {
+        font-size: 16px;
+    }
+
+    .secao-descricao {
+        margin-top: 56px;
+        padding: 0 16px;
+    }
+
+    .secao-descricao p {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+
+    .secao-descricao span {
+        font-size: inherit;
+    }
+
+    .livro-icone,
+    .ball-icone,
+    .ouija-icone {
+        width: 64px;
+    }
+
+    .ball-icone {
+        margin-right: 8px;
+    }
+
+    .ouija-icone {
+        margin-left: 24px;
+        margin-top: -12px;
+    }
+
+    .secao-kit-mes {
+        margin-top: 56px;
+        padding: 0 16px;
+    }
+
+    .kit-mes-cabecalho {
+        gap: 10px;
+    }
+
+    .kit-mes-estrela {
+        width: 18px;
+        height: 18px;
+    }
+
+    .kit-mes-palco {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        padding-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .kit-livro-principal,
+    .kit-item,
+    .kit-mes-legenda,
+    .kit-seta {
+        position: static;
+        transform: none !important;
+        opacity: 1;
+    }
+
+    .kit-livro-principal {
+        width: min(82vw, 320px);
+        order: 2;
+    }
+
+    .kit-bookmark-yellow,
+    .kit-bookmark-purple,
+    .kit-pin {
+        width: min(52vw, 180px);
+    }
+
+    .kit-mes-legenda {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .kit-seta {
+        display: none;
+    }
+
+    .secao-assinatura {
+        padding: 88px 16px 96px;
+    }
+
+    .assinatura-titulo {
+        margin-bottom: 56px;
+    }
+
+    .estrela-assinatura {
+        display: none;
+    }
+
+    .assinatura-cards {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .plano-card,
+    .plano-card-mensal,
+    .plano-card-semestral,
+    .plano-card-anual,
+    .assinatura-cards:hover .plano-card-mensal,
+    .assinatura-cards:hover .plano-card-anual,
+    .assinatura-cards.cards-abertos .plano-card-mensal,
+    .assinatura-cards.cards-abertos .plano-card-anual {
+        width: min(100%, 360px);
+        height: auto;
+        min-height: 320px;
+        transform: none !important;
+        opacity: 1;
+    }
+
+    .plano-card {
+        padding: 24px;
+    }
+
+    .plano-card h2 {
+        font-size: 18px;
+    }
+
+    .plano-card .preco {
+        font-size: 34px;
+    }
+
+    .plano-card .preco span {
+        font-size: 14px;
+    }
+
+    .plano-card .preco-anual,
+    .plano-card li,
+    .plano-card a {
+        font-size: 14px;
+    }
+
+    .coelho-semestral {
+        top: -42px;
+        left: 50%;
+        width: 42px;
+    }
+
+    .rodape {
+        margin-top: 80px;
+        min-height: 0;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+        padding: 64px 20px 48px;
+    }
+
+    .rodape-marca {
+        max-width: none;
+    }
+
+    .rodape-marca > img {
+        width: min(70vw, 240px);
+    }
+
+    .rodape-bg {
+        object-position: left top;
+        opacity: 0.22;
+    }
+
+    .rodape-links {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .rodape-coluna {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-top-left img {
+        height: 32px;
+    }
+
+    .call-button a {
+        padding: 7px 12px;
+        font-size: 13px;
+    }
+
+    .texto {
+        width: 92vw;
+    }
+
+    .texto h1 {
+        font-size: 30px;
+    }
+
+    .texto p {
+        font-size: 15px;
+    }
+
+    .secao-descricao p {
+        font-size: 18px;
+    }
+
+    .secao-kit-mes h1,
+    .secao-kit-mes h2,
+    .assinatura-titulo h2 {
+        font-size: 26px;
+    }
+
+    .plano-card .preco {
+        font-size: 34px;
+    }
+
+    .plano-card .preco span {
+        font-size: 14px;
+    }
+
+    .plano-card {
+        min-height: 300px;
+        padding: 20px;
+    }
+
+    .rodape-redes {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .rodape-coluna h3 {
+        font-size: 18px;
+    }
+
+    .rodape-coluna a {
+        font-size: 16px;
+    }
 }
 
 
