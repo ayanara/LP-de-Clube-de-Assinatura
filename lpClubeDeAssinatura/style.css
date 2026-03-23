@@ -7,7 +7,7 @@
 body {
     margin: 0;
     position: relative;
-    background: black;
+    background: #00050A;
     font-family: Raleway;
 }
 
@@ -379,7 +379,7 @@ body {
 
 .assinatura-titulo {
     text-align: center;
-    margin-bottom: 72px;
+    margin-bottom: 150px;
 }
 
 .assinatura-titulo p {
@@ -395,34 +395,49 @@ body {
     
 }
 
-.assinatura-estrelas {
+.estrela-assinatura {
     position: absolute;
-    display: flex;
-    gap: 12px;
-}
-
-.assinatura-estrelas img {
     width: 18px;
-    opacity: 0.85;
 }
 
-.estrelas-esquerda {
-    left: 48px;
-    top: 300px;
+.estrela-1 {
+    left: 120px;
+    top: 340px;
+    width: 25px;
 }
 
-.estrelas-direita {
-    right: 48px;
-    bottom: 150px;
+.estrela-2 {
+    left: 110px;
+    top: 380px;
+}
+
+.estrela-3 {
+    right: 150px;
+    bottom: 130px;
+    width: 25px;
+}
+
+.estrela-4 {
+    right: 170px;
+    bottom: 100px;
+    
 }
 
 .assinatura-cards {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
+    gap: 0;
     max-width: 1120px;
     margin: 0 auto;
+    position: relative;
+}
+
+.assinatura-cards:hover .plano-card-mensal,
+.assinatura-cards:hover .plano-card-anual,
+.assinatura-cards.cards-abertos .plano-card-mensal,
+.assinatura-cards.cards-abertos .plano-card-anual {
+    opacity: 1;
 }
 
 .plano-card {
@@ -436,6 +451,14 @@ body {
     color: #f8fbfb;
     display: flex;
     flex-direction: column;
+    transition: transform 0.45s ease, box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.35s ease, background-color 0.35s ease;
+}
+
+.bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .plano-card h2 {
@@ -464,7 +487,7 @@ body {
 
 .plano-card ul {
     list-style: none;
-    margin-top: 50px;
+    margin-top: 0;
     margin-bottom: 20px;
 }
 
@@ -481,9 +504,9 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    top: 7px;
-    width: 10px;
-    height: 10px;
+    top: 3px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     background: #59b7f0;
 }
@@ -491,32 +514,133 @@ body {
 .plano-card a {
     display: block;
     width: 100%;
-    padding: 16px 20px;
-    border-radius: 16px;
+    padding: 10px 20px;
+    border-radius: 8px;
     background: #235b88;
     color: #f8fbfb;
     text-decoration: none;
     font-weight: 700;
     text-align: center;
-    margin-top: 0;
 }
 
 .plano-card-mensal {
-    transform: rotate(-8deg);
+    border: 1px solid rgba(65, 125, 201, 0.35);
+    transform: translateX(235px) rotate(-8deg) scale(0.96);
+    z-index: 1;
+    opacity: 0;
+}
+
+.plano-card-mensal h2,
+.plano-card-anual h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.plano-card-mensal .preco,
+.plano-card-anual .preco {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.plano-card-mensal .preco-anual,
+.plano-card-anual .preco-anual {
+    font-size: 11px;
+}
+
+.plano-card-mensal li,
+.plano-card-anual li {
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+.plano-card-mensal a,
+.plano-card-anual a {
+    font-size: 11px;
 }
 
 .plano-card-semestral {
     position: relative;
     transform: translateY(-22px);
-    z-index: 2;
+    z-index: 3;
+}
+
+.plano-card-semestral .preco {
+    margin-top: -20px;
+}
+
+.coelho-semestral {
+    position: absolute;
+    top: -58px;
+    left: 25%;
+    width: 50px;
+    transform: translateX(-50%);
+    z-index: 3;
+    
 }
 
 .plano-card-anual {
-    transform: rotate(8deg);
+    border: 1px solid rgba(65, 125, 201, 0.35);
+    transform: translateX(-235px) rotate(8deg) scale(0.96);
+    z-index: 1;
+    opacity: 0;
+}
+
+.assinatura-cards:hover .plano-card-mensal {
+    transform: translateX(8px) rotate(-8deg);
+}
+
+.assinatura-cards:hover .plano-card-anual {
+    transform: translateX(-8px) rotate(8deg);
+}
+
+.assinatura-cards.cards-abertos .plano-card-mensal {
+    transform: translateX(8px) rotate(-8deg);
+}
+
+.assinatura-cards.cards-abertos .plano-card-anual {
+    transform: translateX(-8px) rotate(8deg);
+}
+
+.plano-card-mensal:hover,
+.assinatura-cards.cards-abertos .plano-card-mensal:hover {
+    transform: translateX(8px) rotate(-8deg) translateY(-10px) scale(1.02);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+    border-color: rgba(65, 125, 201, 0.55);
+    background: rgba(10, 36, 67, 0.98);
+}
+
+.plano-card-semestral:hover,
+.assinatura-cards.cards-abertos .plano-card-semestral:hover {
+    transform: translateY(-32px) scale(1.03);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+    border-color: rgba(65, 125, 201, 0.55);
+    background: rgba(10, 36, 67, 0.98);
+}
+
+.plano-card-anual:hover,
+.assinatura-cards.cards-abertos .plano-card-anual:hover {
+    transform: translateX(-8px) rotate(8deg) translateY(-10px) scale(1.02);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+    border-color: rgba(65, 125, 201, 0.55);
+    background: rgba(10, 36, 67, 0.98);
 }
 
 .destaque {
+    
+}
+
+.plano-card.ativo {
     background: rgba(10, 36, 67, 0.98);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+    border-color: rgba(65, 125, 201, 0.55);
+}
+
+.plano-card.ativo a {
+    background: #8c30a3;
+}
+
+.plano-card.ativo li::before {
+    background: #d45de0;
 }
 
 .plano-topo {
@@ -541,10 +665,9 @@ body {
     text-transform: uppercase;
 }
 
-.plano-card-semestral li::before {
-    background: #d45de0;
+.plano-card.ativo .selo-popular {
+    background: #123c67;
+    color: #d7ebff;
 }
 
-.plano-card-semestral a {
-    background: #8c30a3;
-}
+
